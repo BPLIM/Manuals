@@ -13,3 +13,5 @@
 - [06_Rules for Output Control](https://github.com/BPLIM/Manuals/tree/master/Guides/06_Output_Control)
 
 - [07_How to work with Pseudo-Data](https://github.com/BPLIM/Manuals/tree/master/Guides/07_Working_with_Pseudo-Data)
+
+- [08_Guide to Using Parquet Files with Stata](https://github.com/BPLIM/Manuals/tree/master/Guides/08_Guide_Parquet_Stata)
