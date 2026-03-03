@@ -1,7 +1,7 @@
 ---
 title: "External Server Guide"
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "November 2025"
+date: "March 2026"
 format:
   pdf:
     documentclass: scrartcl
@@ -377,6 +377,8 @@ Each project includes launcher scripts (`.sh` files) for different software:
 - `julia_container.sh` - Launches Julia
 
 **To use:** Click the script in Dolphin or run `./script_name.sh` in the Terminal.
+
+**IMPORTANT:** Do not place a shortcut to the `.sh` script on your Desktop, as this may create conflicts between projects.
 
 ### Method 2: From the Terminal
 
