@@ -1,15 +1,17 @@
 ---
 title: "Using Git"
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "April 1, 2023"
+date: "April 2, 2026"
 format:
-  pdf: 
+  pdf:
     documentclass: scrartcl
+    pdf-engine: xelatex
     papersize: A4
+    geometry: top=27mm, bottom=27mm, left=27mm, right=27mm
     toc: false
     toc-title: Contents
     toc-depth: 2
-    number-sections: true  
+    number-sections: true
   html:
     theme: cosmo
     embed-resources: true
@@ -18,7 +20,7 @@ format:
     html-math-method: katex
     code-copy: true
     number-sections: true
-    
+
 ##bibliography: references.bib
 ##csl: apa-6th-edition
 ##output:
@@ -26,107 +28,124 @@ format:
     ##citation_package: citeproc
 ---
 
+## Purpose
 
-## Using Git in the External Server
+This guide is a quickstart for using Git on the BPLIM External Server. It covers the minimum setup required to create a repository in the internal GitLab server, clone it into your project `work_area`, and make your first commit.
 
-Whenever a user wants to use Git on the external server, it is necessary to add their project to the internal GIT server. This procedure is carried out by DSI.
+For more detailed guidance and troubleshooting, see the Git section in the main External Server guide.
 
-Please run the following test:
+## Prerequisites
 
-**1.	Login to the external server, Config file**
+- Your project must be enabled for GitLab access by the BPLIM/DSI team.
+- You must already be able to log in to the External Server.
+- You should work inside your project's `work_area`, not in your home folder.
 
-To use git, it is necessary to modify or create the .gitconfig file in your user's home directory. You can use KWrite to edit/create the file. The file should have the following format and should be created for each user who has access to GitLab. In this file, you can adapt the name and replace 'investa' with your own user.
+## Configure Git
 
+Create or edit the `.gitconfig` file in your home folder. You can use KWrite to edit the file.
 
-  [cola]
-  
-          spellcheck = false
-          
-  [user]
-  
-          name = Investigador A
-          
-          email = investa@sxpe-bplim01.bplim.local
-          
-  [gui]
-  
-          editor = kwrite
+The `[user]` section is required. The `[cola]` and `[gui]` sections are optional but convenient in the BPLIM environment.
 
+```ini
+[user]
+        name = Your Name
+        email = username@sxpe-bplim01.bplim.local
 
+[cola]
+        spellcheck = false
 
+[gui]
+        editor = kwrite
+```
 
-**2.	Authenticate by `ssh-key`. Open a `Terminal` in your home folder and type:**
+Replace `Your Name` and `username` with your own details.
 
-    - `ssh-keygen -t rsa -C “BPLIM git”`
+## Generate SSH Key
 
-    - `cat ~/.ssh/id_rsa.pub`
-    
-    
+Open a Terminal in your home folder and run:
 
-**3.	Copy the resulting key to the clipboard**
+```bash
+cd ~
+ssh-keygen -t rsa -C "BPLIM git"
+cat ~/.ssh/id_rsa.pub
+```
 
+Copy the full public key shown in the Terminal.
 
+## Add SSH Key in GitLab
 
-**4.	Open Firefox and navigate to [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)**
+Open Firefox and go to:
 
+[https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
 
-![](images/fig1.png)
+![GitLab login page](images/fig1.png){width=58%}
 
-> Confirm that you have a secure connection and use your credentials for the external server to login. 
+Log in with your External Server credentials.
 
+Open your profile settings, go to **SSH Keys**, paste the copied key into the **Key** field, add a title such as `BPLIM git`, and click **Add key**.
 
+![Open profile settings](images/fig2.png){width=32%}
 
-**5.	In your profile go to settings and on the left-side bar click in SSH Keys and paste the contents of the clipboard in the text box on the top right corner under "Key"**
+![Open SSH Keys](images/fig3.png){height=90mm}
 
-![](images/fig2.png)
+![Add the SSH key](images/fig4.png){width=60%}
 
-![](images/fig3.png)
+## Create Project
 
-![](images/fig4.png)
+In GitLab, go to **Projects** -> **New project** and create a repository for your project, for example `scripts_P999`.
 
-> Give a title, e.g., "BPLIM git", and click in "Add key"
+![Create a new project](images/fig5.png){width=62%}
 
+![Define the project details](images/fig7.png){width=54%}
 
+## Clone Repository
 
+Open a Terminal in your project `work_area` and clone the repository:
 
-**6. Go to `Projects` and create a `New project`, e.g., myfirst**
+```bash
+cd /bplimext/projects/P999_research_project/work_area/
+git clone git@vxpp-bplimgit.bplim.local:username/scripts_P999.git
+```
 
+Replace `P999_research_project`, `username`, and `scripts_P999` with your own project path, GitLab username, and repository name.
 
-![](images/fig5.png)
+![Copy the clone address from GitLab](images/fig6.png){width=62%}
 
+After cloning, a new folder with the repository name will be available in your `work_area`.
 
-![](images/fig7.png)
+![Repository folder created in work_area](images/fig9.png){width=80%}
 
+## Add .gitignore
 
+Move into the repository folder and copy the `.gitignore` template from your project's `tools` folder:
 
-**7. Now you can clone the project**
+```bash
+cd scripts_P999
+cp /bplimext/projects/P999_research_project/tools/.gitignore .
+```
 
+## First Commit
 
-![](images/fig6.png)
+Add your files, create the first commit, and push it to GitLab:
 
-Open a `Terminal` in your `work_area` and type
+```bash
+git add .
+git commit -m "Initial commit"
+git push
+```
 
-`git clone git@vxpp-bplimgit.bplim.local:investa/myfirst.git`
+If other changes have already been pushed to the remote repository, run `git pull` before `git push`.
 
+## Good Practices
 
-![](images/fig8.png)
+::: {.callout-note appearance="simple"}
+- Keep only scripts, code, and project documentation in the Git repository.
+- Work inside your project's `work_area`.
+- Commit regularly and use descriptive commit messages.
+- Pull before pushing when working with collaborators.
+:::
 
+## Further Reading
 
-
-You have now a new folder corresponding to your project:
-
-![](images/fig9.png)
-
-
-
-**8. You should now create a `.gitignore` file following the instructions available at [https://git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore)**
-
-
-
-**9. You are now ready to work with Git on your project**
-
-You can find here a Git tutorial
-
-[https://git-scm.com/docs/gittutorial](https://git-scm.com/docs/gittutorial)
-
-
+- Git tutorial: [https://git-scm.com/docs/gittutorial](https://git-scm.com/docs/gittutorial)
+- Full BPLIM workflow and troubleshooting: see the Git section in the External Server guide.

@@ -3,13 +3,15 @@ title: "Using Containers"
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
 date: "February 1, 2024"
 format:
-  pdf: 
+  pdf:
     documentclass: scrartcl
+    pdf-engine: xelatex
     papersize: A4
+    geometry: top=27mm, bottom=27mm, left=27mm, right=27mm
     toc: true
     toc-title: Contents
     toc-depth: 3
-    number-sections: true  
+    number-sections: true
   html:
     theme: cosmo
     embed-resources: true
@@ -70,7 +72,7 @@ singularity shell ../tools/iPROJECT_ID.BPLIM_Python_R_Jupyter.sif
 
 4.  Inside the container, the prompt will change to `Singularity >`
 
-> ![](images/prompt_singularity.PNG)
+> ![](images/prompt_singularity.PNG){width=35%}
 
 5.  For example, to open a Jupyter Notebook, type:
 

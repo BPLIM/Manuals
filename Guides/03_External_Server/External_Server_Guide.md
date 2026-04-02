@@ -1,7 +1,7 @@
 ---
 title: "External Server Guide"
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "March 2026"
+date: "April 2, 2026"
 format:
   pdf:
     documentclass: scrartcl
@@ -151,15 +151,15 @@ This section guides you through your initial login and introduces the basic inte
 
 >
 
-> ![](./media/image1.png){width=65%}
+> ![](./media/image1.png){width=55%}
 
 >
 
-> ![](./media/image2.png){width=65%}
+> ![](./media/image2.png){width=55%}
 
 >
 
-> ![](./media/image3.png){width=65%}
+> ![](./media/image3.png){width=55%}
 
 >
 
@@ -173,7 +173,7 @@ This section guides you through your initial login and introduces the basic inte
 
 >
 
-> ![](./media/image5.png){width=50%}
+> ![](./media/image5.png){width=35%}
 
 >
 
@@ -222,7 +222,7 @@ This section guides you through your initial login and introduces the basic inte
 
 >
 
-> ![](./media/image7.png){width=50%}
+> ![](./media/image7.png){width=35%}
 
 >
 
@@ -1212,7 +1212,7 @@ Please check with your provider in case you get an error while trying to use the
 
 >
 
-> ![](./media/image17.png){width=50%}
+> ![](./media/image17.png){width=42%}
 
 >
 
@@ -1236,19 +1236,19 @@ Please check with your provider in case you get an error while trying to use the
 
 >
 
-> ![](./media/image19.png){width=50%}
+> ![](./media/image19.png){width=42%}
 
 >
 
-> ![](./media/image21.png){width=50%}
+> ![](./media/image21.png){width=42%}
 
 >
 
-> ![](./media/image22.png){width=50%}
+> ![](./media/image22.png){width=42%}
 
 >
 
-> ![](./media/image24.png){width=50%}
+> ![](./media/image24.png){width=42%}
 
 >
 
@@ -1453,9 +1453,35 @@ The server provides [GitLab](https://about.gitlab.com/) for version control. Git
 
 ### Getting Started with Git
 
+#### Prerequisites
+
+- Your project must be enabled for GitLab access by the BPLIM/DSI team.
+- You must already be able to log in to the External Server.
+- You should work inside your project's `work_area`, not in your home folder.
+
+#### Configure Git
+
+Create or edit the `.gitconfig` file in your home folder. Use KWrite (Red Hat → Search → KWrite) to edit the file.
+
+The `[user]` section is required. The `[cola]` and `[gui]` sections are optional but convenient in the BPLIM environment.
+
+```ini
+[user]
+        name = Your Name
+        email = username@sxpe-bplim01.bplim.local
+
+[cola]
+        spellcheck = false
+
+[gui]
+        editor = kwrite
+```
+
+Replace `Your Name` and `username` with your own details.
+
 #### Generate an SSH Key
 
-Open a Terminal in your home folder and generate an SSH key:
+Open a Terminal in your home folder and run:
 
 ```bash
 cd ~
@@ -1463,7 +1489,7 @@ ssh-keygen -t rsa -C "BPLIM git"
 cat ~/.ssh/id_rsa.pub
 ```
 
-Highlight the generated key, right-click, and select **Copy** to copy it to your clipboard.
+Copy the full public key shown in the Terminal.
 
 #### Access GitLab
 
@@ -1478,7 +1504,7 @@ Open Firefox (Red Hat → Search → Firefox) and navigate to:
 
 >
 
-Log in with your external server credentials.
+Log in with your External Server credentials.
 
 #### Add Your SSH Key in GitLab
 
@@ -1486,7 +1512,7 @@ Log in with your external server credentials.
 
 >
 
-> ![](./media/GitLab2.png){width=35%}
+> ![](./media/GitLab2.png){width=28%}
 
 >
 
@@ -1494,7 +1520,7 @@ Log in with your external server credentials.
 
 >
 
-> ![](./media/GitLab3.png){width=35%}
+> ![](./media/GitLab3.png){height=85mm}
 
 >
 
@@ -1525,20 +1551,6 @@ Go to **Projects** → **New project** and create a repository (e.g., `scripts_P
 
 >
 
-#### Configure Git
-
-Create or edit the `.gitconfig` file in your home folder. Use KWrite (Red Hat → Search → KWrite):
-
-```bash
-[cola]
-        spellcheck = false
-[user]
-        name = Your Name
-        email = your_username@sxpe-bplim01.bplim.local
-[gui]
-        editor = kwrite
-```
-
 #### Clone Your Project
 
 In the Terminal, navigate to your `work_area` and clone the repository:
@@ -1561,18 +1573,22 @@ cp /bplimext/projects/P999_research_project/tools/.gitignore .
 
 #### Make Your First Commit
 
+Add your files, create the first commit, and push it to GitLab:
+
 ```bash
-git add *
-git commit -a -m "Initial commit"
+git add .
+git commit -m "Initial commit"
 git push
 ```
 
+If other changes have already been pushed to the remote repository, run `git pull` before `git push`.
+
 #### Best Practices
 
-- Store all your scripts and code in the Git repository folder (e.g., `scripts_P999`)
+- Keep only scripts, code, and project documentation in the Git repository.
+- Work inside your project's `work_area`.
 - Commit changes regularly with descriptive messages
-- Pull before you push to avoid conflicts
-- Use branches for experimental work
+- Pull before pushing when working with collaborators
 
 
 ## Building Custom Containers
@@ -1655,7 +1671,7 @@ This opens JupyterLab in Firefox, providing an integrated environment for:
 
 >
 
-> ![](./media/JupyterLab.png){width=65%}
+> ![](./media/JupyterLab.png){width=55%}
 
 >
 
