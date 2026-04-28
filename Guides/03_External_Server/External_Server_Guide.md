@@ -1451,7 +1451,7 @@ The server provides [GitLab](https://about.gitlab.com/) for version control. Git
 - Collaborate with team members
 - Maintain a complete history of your research workflow
 
-### Getting Started with Git
+### Getting Started with GitLab
 
 #### Prerequisites
 
@@ -1459,44 +1459,11 @@ The server provides [GitLab](https://about.gitlab.com/) for version control. Git
 - You must already be able to log in to the External Server.
 - You should work inside your project's `work_area`, not in your home folder.
 
-#### Configure Git
-
-Create or edit the `.gitconfig` file in your home folder. Use KWrite (Red Hat → Search → KWrite) to edit the file.
-
-The `[user]` section is required. The `[cola]` and `[gui]` sections are optional but convenient in the BPLIM environment.
-
-```ini
-[user]
-        name = Your Name
-        email = username@sxpe-bplim01.bplim.local
-
-[cola]
-        spellcheck = false
-
-[gui]
-        editor = kwrite
-```
-
-Replace `Your Name` and `username` with your own details.
-
-#### Generate an SSH Key
-
-Open a Terminal in your home folder and run:
-
-```bash
-cd ~
-ssh-keygen -t rsa -C "BPLIM git"
-cat ~/.ssh/id_rsa.pub
-```
-
-Copy the full public key shown in the Terminal.
-
 #### Access GitLab
 
 Open Firefox (Red Hat → Search → Firefox) and navigate to:
 
 [https://vxpp-bplimgit.bplim.local/](https://vxpp-bplimgit.bplim.local/)
-
 
 >
 
@@ -1506,40 +1473,9 @@ Open Firefox (Red Hat → Search → Firefox) and navigate to:
 
 Log in with your External Server credentials.
 
-#### Add Your SSH Key in GitLab
-
-- Navigate to your profile by clicking **Settings** in the top-right corner
-
->
-
-> ![](./media/GitLab2.png){width=28%}
-
->
-
-- In the left sidebar, click **SSH Keys**
-
->
-
-> ![](./media/GitLab3.png){height=85mm}
-
->
-
-- Paste your SSH key in the **Key** text box
-
->
-
-> ![](./media/GitLab4.png){width=50%}
-
->
-
-- Enter a title (e.g., "BPLIM git") and click **Add key**
-
-\newpage
-
 #### Create a New GitLab Project
 
-Go to **Projects** → **New project** and create a repository (e.g., `scripts_P999`).
-
+Select **Projects** → **Create new project** and create a repository for your code (for example, `scripts_P999`).
 
 >
 
@@ -1551,25 +1487,53 @@ Go to **Projects** → **New project** and create a repository (e.g., `scripts_P
 
 >
 
-#### Clone Your Project
+After the project is created, click **Clone** and copy the **HTTPS** address.
 
-In the Terminal, navigate to your `work_area` and clone the repository:
+\newpage
+
+#### Configure Git and Clone Your Project
+
+Open a Terminal and configure Git for the BPLIM GitLab server:
+
+```bash
+git config --global credential.helper store
+git config --global push.default simple
+git config --global http."https://vxpp-bplimgit.bplim.local".sslVerify false
+git config --global http.sslVerify false
+cat ~/.gitconfig
+git config --global --list
+```
+
+Then navigate to your project's `work_area` and clone the repository using the HTTPS address copied from GitLab. Replace `USERNAME` and `Project_ID` with your own GitLab username and project name.
 
 ```bash
 cd /bplimext/projects/P999_research_project/work_area/
-git clone git@vxpp-bplimgit.bplim.local:username/scripts_P999.git
+git clone https://vxpp-bplimgit.bplim.local/USERNAME/Project_ID.git
+cd Project_ID
+git pull
+git push -u origin main
+git pull
 ```
 
-#### Add .gitignore File
+When prompted, enter your GitLab credentials. Because `credential.helper store` is enabled, Git will remember them for future commands such as `git pull` and `git push`.
 
-Copy the `.gitignore` template from your project's `tools` folder:
+This stores your GitLab credentials in plain text in `~/.git-credentials`. Use this only in your own External Server account.
+
+If you later change your GitLab password, remove the stored credential and run `git pull` or `git push` again. Git will ask for the new password and store it again.
 
 ```bash
-cd scripts_P999
-cp /bplimext/projects/P999_research_project/tools/.gitignore .
+git credential reject <<EOF
+protocol=https
+host=vxpp-bplimgit.bplim.local
+EOF
 ```
 
-\newpage
+If Git asks for your identity when you commit, set your name and email once:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "username@sxpe-bplim01.bplim.local"
+```
 
 #### Make Your First Commit
 
@@ -1577,7 +1541,7 @@ Add your files, create the first commit, and push it to GitLab:
 
 ```bash
 git add .
-git commit -m "Initial commit"
+git commit -m "My first commit"
 git push
 ```
 
