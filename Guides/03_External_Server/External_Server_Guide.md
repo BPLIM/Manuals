@@ -1,7 +1,7 @@
 ---
 title: "External Server Guide"
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "April 2, 2026"
+date: "April 28, 2026"
 format:
   pdf:
     documentclass: scrartcl
