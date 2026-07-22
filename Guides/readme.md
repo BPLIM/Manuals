@@ -6,8 +6,6 @@
 
 - [03_External Server Guide](https://github.com/BPLIM/Manuals/tree/master/Guides/03_External_Server)
 
-- [04_How to use Git on External Server](https://github.com/BPLIM/Manuals/tree/master/Guides/04_How_to_use_Git)
-
 - [05_How to use Containers on External Server](https://github.com/BPLIM/Manuals/tree/master/Guides/05_How_to_use_Containers)
 
 - [06_Rules for Output Control](https://github.com/BPLIM/Manuals/tree/master/Guides/06_Output_Control)
