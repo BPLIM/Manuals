@@ -1,7 +1,7 @@
 ---
 title: BPLIM Datasets Guide
 author: "Banco de Portugal's Microdata Research Laboratory (BPLIM)"
-date: "November 2025"
+date: "October 2026"
 format:
   pdf: 
     documentclass: scrartcl
@@ -10,6 +10,7 @@ format:
     toc-title: Contents
     toc-depth: 3
     number-sections: true   
+    pdf-engine: xelatex
   html:
     theme: cosmo
     embed-resources: true
@@ -150,11 +151,14 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 ## Central Credit Register Database (CRC)
 
-The Central Credit Register (CRC) database reports credit supply by all credit-granting institutions in Portugal. Data is collected monthly with the objective of supporting participants in the risk assessment of credit concession. Until 2018, Banco de Portugal collected information at the **credit exposure level** and produced three datasets with different levels of granularity: **exposure-level**, **firm-bank-level** and **firm-level** data (this database is now known as the Old CRC). This database was updated annually until 2018. Old CRC underwent a major revision in September, 2018 and was replaced by a new reporting system.
+The Central Credit Register (CRC) database reports credit supplied by all credit-granting institutions in Portugal. Data are collected monthly with the objective of supporting participating institutions in assessing credit risk.
+
+Until 2018, Banco de Portugal collected information at the **credit exposure level** and produced three datasets with different levels of granularity: **exposure-level**, **firm-bank-level** and **firm-level** data (this database is now known as the Old CRC). The database was updated annually until 2018. The Old CRC underwent a major revision in September 2018 and was replaced by a new reporting system.
+
+In 2026, the database underwent a further revision, resulting in **Version 2** of the dataset, which incorporates several methodological changes.
 
 For more information on this dataset, please refer to the **Manuals and Auxiliary Documentation** (metadata files, variable descriptions) available in the [**BPLIM Github Repository - CRC**](https://github.com/BPLIM/Manuals/tree/master/Data/CRC).
 <br>
-
 
 
 ![CRC Available Products](./images/CRC.png)
@@ -164,9 +168,10 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 ## Harmonized Central Credit Register (HCRC)
 
-The Portuguese Central Credit Register (with the database prior to September 2018 known as the Old CRC) underwent a major revision in September, 2018 and was replaced by a new reporting system (known as the New CRC), which started to collect granular credit data at the **instrument level**.
+The Portuguese Central Credit Register (with the database prior to September 2018 known as the Old CRC) underwent a major revision in September 2018 and was replaced by a new reporting system (known as the New CRC), which started to collect granular credit data at the **instrument level**.
 
-The Harmonized Central Credit Register Database (HCRC) aims to build compatible series between the Old CRC and the New CRC by selecting a set of most relevant variables and adopting necessary steps to harmonize the data. The database is updated annually, covers the period from 2009 onwards and consists of information aggregated at the **firm-level** and **bank-firm level**. 
+The Harmonized Central Credit Register Database (HCRC) aims to construct compatible series between the Old CRC and the New CRC by selecting a set of the most relevant variables and applying the necessary procedures to harmonize the data. The database is updated annually, covers the period from 2009 onwards, and provides information aggregated at the  **firm-level** and **bank-firm level**. 
+
 Data constructed at **exposure level** mimicking the data structure of the Old CRC is only available to internal researchers.
 
 For more information on this dataset, please refer to the **Manuals and Auxiliary Documentation** (metadata files, variable descriptions) available in the [**BPLIM Github Repository - HCRC**](https://github.com/BPLIM/Manuals/tree/master/Data/HCRC).
@@ -180,16 +185,19 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 
 
-## Bank Balance Sheet (BBS)
+## Bank Balance Sheet (BBS)– Discontinued
 
-The Monetary Financial Institutions (MFIs) Balance Sheet Database (BBS) reports, on a **individual basis**, detailed information on the assets and liabilities of the MFIs operating in Portugal. The dataset contains monthly data, from 1997 onwards and is updated annually. 
+The Monetary Financial Institutions (MFIs) Balance Sheet Database (BBS) reports, on an **individual basis**, detailed information on the assets and liabilities of **MFIs operating in Portugal**. The dataset contains monthly data from 1997 to December 2023.
 
-For more information on this dataset, please refer to the **Manuals and Auxiliary Documentation** (metadata files, variable descriptions) available in the [**BPLIM Github Repository - BBS**](https://github.com/BPLIM/Manuals/tree/master/Data/BBS).
+The BBS has been **discontinued** for methodological reasons and is no longer updated. It has been replaced by the **Individual MFI Balance Sheet Items Portugal (iBSIPT**) database, first made available by BPLIM in 2026. 
+
+For more information on the new database, please refer to the **iBSIPT section** of this Manual and to the **Manuals and Auxiliary Documentation** available in the [**BPLIM Github Repository - iBSIPT**](https://github.com/BPLIM/Manuals/tree/master/Data/iBSIPT).
+
 <br>
 
 
 
-![BBS Available Products](./images/BBS.png)
+![BBS Products](./images/BBS.png)
 
 
 {{< pagebreak >}}
@@ -198,9 +206,9 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 ## Historical Series of Portuguese Banking Sector (SLB)
 
-The Historical Series of the Portuguese Banking Sector Database (SLB) reports, on a **consolidated basis**, a wide range of series on bank's financial statements (i.e., balance sheet, income statement, and solvency), loans to customers, interest rates, human resources, branch network, and payment systems. The data is collected and assembled by a working group at BdP, which was established at the end of 2017 with the objective of constructing historical series on the Portuguese banking sector.
+The Historical Series of the Portuguese Banking Sector Database (SLB) reports, on a **consolidated basis**, a wide range of information on banks' financial statements (i.e., balance sheet, income statement, and solvency), loans to customers, interest rates, human resources, branch networks, and payment systems. The data are collected and assembled by a working group at Banco de Portugal, established at the end of 2017 with the objective of constructing historical series for the Portuguese banking sector.
 
-The SLB database covers the period from 1990 onwards and is available at yearly frequency. For some tables (i.e., balance sheet, income statement, solvency, loans to customers, and interest rates), data is also available at quarterly frequency. This dataset is updated annually. 
+The SLB database covers the period from 1990 onwards and is available at an annual frequency. For some tables (i.e., balance sheet, income statement, solvency, loans to customers, and interest rates), data are also available at a quarterly frequency. The dataset is updated annually.
 
 For more information on this dataset, please refer to the **Manuals and Auxiliary Documentation** (metadata files, variable descriptions) available in the [**BPLIM Github Repository - SLB**](https://github.com/BPLIM/Manuals/tree/master/Data/SLB).
 <br>
@@ -208,6 +216,23 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 
 ![SLB Available Products](./images/SLB.png)
+
+{{< pagebreak >}}
+
+
+
+## Individual MFI Balance Sheet Items Portugal (iBSIPT)
+
+The Individual MFI Balance Sheet Items Portugal Database (iBSIPT) reports, on an **individual basis**, detailed balance sheet information for monetary financial institutions (MFIs) operating in Portugal. The database provides monthly outstanding amounts of balance sheet items, broken down by counterparty sector and residency and, for selected items, by original maturity.
+
+The iBSIPT database covers the period from December 2014 onwards and is available at a monthly frequency. The dataset was first made available by BPLIM in 2026 and replaces the discontinued Bank Balance Sheet Database (BBS).
+
+For more information on this dataset, please refer to the **Manuals and Auxiliary Documentation** (metadata files, variable descriptions) available in the [**BPLIM Github Repository - iBSIPT**](https://github.com/BPLIM/Manuals/tree/master/Data/iBSIPT).
+<br>
+
+
+
+![iBSIPT Available Products](./images/iBSIPT.png)
 
 {{< pagebreak >}}
 
@@ -225,7 +250,7 @@ For more information on this dataset, please refer to the **Manuals and Auxiliar
 
 # Additional Datasets Available for Internal Researchers
 
-Although these datasets are primarily available for internal use, all datasets produced by the Bank of Portugal can be made available to **external researchers** through **remote execution**, provided that the project’s research topic is considered relevant to the Bank of Portugal’s **research agenda**.
+Although these datasets are primarily available for internal use, all datasets produced by Banco de Portugal may also be made available to external researchers through **remote execution**, provided that the project's research topic is considered relevant to Banco de Portugal's **research agenda**.
 
 
 ![Additional Datasets Available for Internal Researchers](./images/internal.png)
@@ -240,14 +265,13 @@ The Central Credit Register (CRC) database contains credit exposure data for bot
 
 ## Supermarket Daily Prices (SDP) and Matched Supermarket Daily Prices (MSDP)
 
-The Supermarket Daily Prices (SDP) database provides **daily data on the prices** of food and beverage products sold in six supermarkets in Portugal: Auchan, Continente, Minipreço, Pingo Doce, Froiz, and Supercor. This information is **webscraped** from their online stores by BPLIM. 
+The Supermarket Daily Prices (**SDP**) database provides **daily data on the prices** of food and beverage products sold in six supermarkets in Portugal: Auchan, Continente, Minipreço, Pingo Doce, Froiz, and Supercor. This information is **webscraped** from the supermarkets' online stores by BPLIM.
 
-Using this data, BPLIM created the Matched Supermarket Daily Prices (MSDP), which offers daily data on the prices of food and beverage products sold across multiple supermarkets included in the SDP database. This enables **price comparisons** across different supermarkets. 
+Based on these data, BPLIM created the Matched Supermarket Daily Prices (**MSDP**) database, which provides daily prices for food and beverage products matched across multiple supermarkets included in the SDP database, enabling price comparisons across supermarket chains.
 
-Both the SDP and MSDP datsets cover the period starting in 2021 and are updated **annually for research purposes**. 
+Both the SDP and MSDP datasets cover the period from 2021 onwards and are updated **annually for research purposes**.
 
-This data can only be used for research projects involving Internal Researchers. 
-
+These datasets are only available for research projects involving internal researchers.
 
 
 {{< pagebreak >}}
@@ -260,13 +284,13 @@ This data can only be used for research projects involving Internal Researchers.
 ![Upcoming Datasets](./images/future.png)
 
 
-## Statistical Central Credit Register (SCRC)
+## Statistical Central Credit Register (CRCE)
 
-The Portuguese Central Credit Register (with the database prior to August 2018 known as the Old CRC) underwent a major revision in September, 2018 and was replaced by a new reporting system (i.e. NEWCRC) which started to collect granular credit data on a loan-by-loan basis.
+The Portuguese Central Credit Register underwent a major revision in September, 2018 (with the database prior to September 2018 known as the Old CRC) and was replaced by a new reporting system (i.e. NEWCRC) which started to collect granular credit data on a loan-by-loan basis.
 
-To **facilitate and harmonize** the use of credit information, the Statistical Central Credit Register (Statistical CRC) was created. This database contains credit information at the micro level, where information reported to the CRC is made available after statistical data processing processes. These processes include the correction of flaws identified in the reported information and the calculation of additional variables following harmonized algorithms. 
+To **facilitate and harmonize** the use of credit information, the Statistical Central Credit Register (Statistical CRC) was created. This database contains credit information at the micro level, where information reported to the CRC is made available after statistical data processing processes. These processes include the correction of flaws identified in the reported information and the calculation of additional variables following harmonized methodologies. 
 
-As a result, the Statistical CRC guarantees the existence of a common base of granular information on credit so that analyses made from this database are consistent with each other.
+As a result, the Statistical CRC provides a common and consistent source of granular credit information, helping to ensure comparability across analyses based on these data.
 
 The data will be available at the **firm level**, **firm-bank level**, and **instrument level**.
 
@@ -274,38 +298,36 @@ The data will be available at the **firm level**, **firm-bank level**, and **ins
 
 ## Balance of Payments (BoP)
 
-The Portuguese Balance of Payments records the transactions that take place between residents and non-residents in Portugal over a given period of time, typically a month, quarter, or year. Transactions are classified in the balance of payments according to the nature of the underlying economic resources. There are **three main categories**: **current account**, **capital account**, and **financial account**.
+The Portuguese Balance of Payments records transactions between residents and non-residents over a given period, typically a month, quarter, or year. Transactions are classified according to the nature of the underlying economic resources and are grouped into **three main categories**: the current account, capital account, and financial account.
 
-The current account includes transactions between residents and non-residents involving produced assets (goods and services), primary income (income from the use of factors of production such as capital and labor), and secondary income (current transfers).
+The current account records transactions between residents and non-residents involving goods and services, primary income (income associated with the use of factors of production, such as capital and labour), and secondary income (current transfers).
 
+These data will only be available for research projects involving internal researchers.
 
 
 ## E-Fatura
 
-E-Fatura data is received monthly under a **Protocol** signed between BdP and INE. This database contains **information regarding invoices** issued by entities that have their headquarters or permanent establishment in the national territory. The information is aggregated by the tax identification number (NIF) of the issuer (only for legal persons) and the acquirer. 
+E-Fatura data are received monthly under a **Protocol between Banco de Portugal and Statistics Portugal (INE)**. The database contains **information on invoices** issued by entities with their headquarters or a permanent establishment in Portugal. The information is aggregated by the tax identification number (NIF) of the issuer (for legal persons only) and the acquirer.
 
-INE implements some data cleaning, like imputation of missings or outliers, before sharing the data with BdP.
+Before sharing the data with Banco de Portugal, INE performs data cleaning procedures, including the imputation of missing values and the treatment of outliers.
 
-This data will only be available to Internal Researchers. 
-
+These data will only be available to Internal Researchers. 
 
 
 ## Social Security (SS)
 
-Social Security Data (SS) is received every month under a **Protocol** signed between BdP and Social Security Institute and may only be used by Internal Researchers.
+Social Security Data (SS) are received monthly under a **Protocol between Banco de Portugal and the Social Security Institute**. The database provides monthly information, from January 2010 onwards, on individuals' classification for contribution purposes, wage records, and Social Security transfers. Information on pensions is available from January 2017 onwards.
 
-It provides monthly information on the classification of the individual for contribution purposes, wage registers, Social Security transfers, and pensions since January 2010. Information on pensions is also available since January 2017.
-
-This data will only be available to Internal Researchers. 
+These data will only be available to Internal Researchers. 
 
 
 
 ## Institute for Employment and Vocational Training Database (IEFP)
 
-IEFP data encompasses all job applications, job offers, applications to job offers, interventions, and calls managed by the Institute for Employment and Vocational Training's information system.
+IEFP data cover job applications, job offers, applications to job offers, interventions, and calls managed through the information system of the Institute for Employment and Vocational Training (IEFP).
 
-This dataset tracks individuals who register with IEFP for job searching purposes, detailing their interventions, calls received from job centers, and job applications submitted. It also provides insights into the outcomes of these interventions, calls, and applications.
+The database tracks individuals registered with IEFP for job-search purposes and provides information on their interactions with the Institute, including interventions, calls from job centres, and job applications. It also includes information on the outcomes of these interactions.
 
-This data will only be available to Internal Researchers. 
+These data will only be available to Internal Researchers.
 
 
