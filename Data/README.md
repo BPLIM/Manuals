@@ -1,6 +1,6 @@
 # BPLIM - Data Manuals
 
-- [Bank Balance Sheet (BBS)](https://github.com/BPLIM/Manuals/tree/master/Data/BBS) - DISCONTINUED
+- [Bank Balance Sheet (BBS)](https://github.com/BPLIM/Manuals/tree/master/Data/BBS) - Discontinued
 
 - [Central Balance Sheet (CB)](https://github.com/BPLIM/Manuals/tree/master/Data/CB)
 
