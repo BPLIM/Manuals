@@ -1,6 +1,6 @@
 # BPLIM - Data Manuals
 
-- [Bank Balance Sheet (BBS)](https://github.com/BPLIM/Manuals/tree/master/Data/BBS)
+- [Bank Balance Sheet (BBS)](https://github.com/BPLIM/Manuals/tree/master/Data/BBS) - DISCONTINUED
 
 - [Central Balance Sheet (CB)](https://github.com/BPLIM/Manuals/tree/master/Data/CB)
 
@@ -11,6 +11,8 @@
 - [Harmonized Central Credit Register (HCRC)](https://github.com/BPLIM/Manuals/tree/master/Data/HCRC)
 
 - [Spanish and Portuguese Companies Microdata (iBACH)](https://github.com/BPLIM/Manuals/tree/master/Data/IBACH)
+
+- [Individual MFI Balance Sheet Items Portugal (iBSIPT)](https://github.com/BPLIM/Manuals/tree/master/Data/iBSIPT)
 
 - [Fast and Exceptional Enterprise Survey (COVID-IREE)](https://github.com/BPLIM/Manuals/tree/master/Data/IREE)
 
